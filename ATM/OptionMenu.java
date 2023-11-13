@@ -47,23 +47,24 @@ public class OptionMenu {
 				System.out.println("\nSelect the account you want to access: ");
 				System.out.println(" Type 1 - Checking Account");
 				System.out.println(" Type 2 - Savings Account");
-				System.out.println(" Type 3 - Exit");
+				System.out.println(" Type 3 - View Account Statements");
+				System.out.println(" Type 4 - Exit");
 				System.out.print("\nChoice: ");
 
 				int selection = menuInput.nextInt();
 
 				switch (selection) {
-				case 1:
-					getChecking(acc);
-					break;
-				case 2:
-					getSaving(acc);
-					break;
-				case 3:
-					end = true;
-					break;
-				default:
-					System.out.println("\nInvalid Choice.");
+					case 1:
+						getChecking(acc);
+						break;
+					case 2:
+						getSaving(acc);
+						break;
+					case 4:
+						end = true;
+						break;
+					default:
+						System.out.println("\nInvalid Choice.");
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("\nInvalid Choice.");
@@ -87,24 +88,23 @@ public class OptionMenu {
 				int selection = menuInput.nextInt();
 
 				switch (selection) {
-				case 1:
-					System.out.println("\nChecking Account Balance: " + moneyFormat.format(acc.getCheckingBalance()));
-					break;
-				case 2:
-					acc.getCheckingWithdrawInput();
-					break;
-				case 3:
-					acc.getCheckingDepositInput();
-					break;
-
-				case 4:
-					acc.getTransferInput("Checking");
-					break;
-				case 5:
-					end = true;
-					break;
-				default:
-					System.out.println("\nInvalid Choice.");
+					case 1:
+						System.out.println("\nChecking Account Balance: " + moneyFormat.format(acc.getCheckingBalance()));
+						break;
+					case 2:
+						acc.getCheckingWithdrawInput();
+						break;
+					case 3:
+						acc.getCheckingDepositInput();
+						break;
+					case 4:
+						acc.getTransferInput("Checking");
+						break;
+					case 5:
+						end = true;
+						break;
+					default:
+						System.out.println("\nInvalid Choice.");
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("\nInvalid Choice.");
@@ -112,6 +112,23 @@ public class OptionMenu {
 			}
 		}
 	}
+
+	public void viewStatements(Account acc) {
+		boolean end = false;
+		while (!end) {
+			try {
+				System.out.println("/n View Statements on your account: ");
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+			} catch (
+					Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+	}
+
 
 	public void getSaving(Account acc) {
 		boolean end = false;
