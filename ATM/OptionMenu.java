@@ -129,7 +129,6 @@ public class OptionMenu {
         }
 	}
 
-
 	public void getSaving(Account acc) {
 		boolean end = false;
 		while (!end) {
